@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="registration-container">
+    <form method="post" class= "form">
+    {% csrf_token %}
+        <h2>Login</h2>
+        <input type="text" placeholder="username" required name="username" id="username">
+        <input type="password" placeholder="password" required name="password" id="password">
+        <input type="submit" id="submit" value="Login">
+        <h4>No account?<br>Signup <a href="{% url 'signup' %}">here</a> </h4>
+    </form>
+
+</div>
+
+{% endblock %}

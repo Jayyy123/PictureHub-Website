@@ -1,0 +1,17 @@
+{% extends 'main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="registration-container">
+    <form method="post" enctype="multipart/form-data" class= "form">
+    {% csrf_token %}
+        <h2>Profile Edit</h2>
+        {{a.as_p}}
+        <input type="submit" id="submit" value="Update">
+        <h4>No account?<br>Signup <a href="{% url 'signup' %}">here</a> </h4>
+    </form>
+
+</div>
+
+{% endblock %}

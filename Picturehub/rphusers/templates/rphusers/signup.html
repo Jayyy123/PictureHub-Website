@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="registration-container">
+    <form method="post" class= "form">
+    {% csrf_token %}
+        <h2>Login</h2>
+        {{a.as_p}}
+        <input type="submit" id="submit" value="Signup">
+        <h4>Already have an account?<br> Login <a href="{% url 'login' %}">here</a> </h4>
+    </form>
+
+</div>
+
+{% endblock %}

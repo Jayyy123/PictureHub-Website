@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block content %}
+
+<div class="profile-container">
+
+    <img src="{{a.profile_picture.url}}" alt="">
+
+    <div>
+        <h2>{{a.first_name }} {{a.last_name}}</h2>
+        <h4>{{a.username}}</h4>
+        <h4>{{a.email}}</h4>
+
+    </div>
+    <a href="/rphusers/profileform/{{a.id}}/">Edit Profile</a>
+
+</div>
+
+{% endblock %}

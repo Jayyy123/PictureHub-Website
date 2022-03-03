@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>PICTUREHUB</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="{% static 'styles/main.css' %}">
+    </head>
+    <body>
+        {% comment %} navigation bar {% endcomment %}
+        {% include 'navbar.html' %}
+
+        {% comment %} Messages {% endcomment %}
+        {% if messages %}
+        {% for message in messages %}
+        <ul {% if message.tags %} class="{{message.tags}}" {% endif %}>
+            <li>{{message}}</li>
+        </ul>
+        {% endfor %}
+        {% endif %}
+
+        {% comment %} Content {% endcomment %}
+       {% block content %}
+       
+       {% endblock %}
+        <script src="{% static 'js/main.js' %}" async defer></script>
+    </body>
+</html>
